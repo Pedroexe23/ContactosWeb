@@ -1,0 +1,51 @@
+﻿@model List<Contacto.Models.CONTACTOS>
+
+@{
+
+
+}
+
+<h2>Index</h2>
+<div class="row">
+    <div class="col-lg col-md col-sm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Telefono</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Direccion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var CElementos in Model)
+                {
+                    <tr>
+                        <td>@CElementos.IDContacto</td>
+                        <td>@CElementos.NOMBRE</td>
+                        <td>@CElementos.TELEFONO</td>
+                        <td>@CElementos.EMAIL</td>
+                        <td>@CElementos.DIRECCION</td>
+                        <td>
+                            <a class="btn  btn-outline-success " href="/CONTACTOS/Edit/@CElementos.IDContacto">editar</a>
+                            
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="/CONTACTOS/Delete/@CElementos.IDContacto">Borrar</a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <a href="/CONTACTOS/Create" class="btn btn-info btn-outline-light ">nuevo</a>
+
+</div>
